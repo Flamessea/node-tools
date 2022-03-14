@@ -54,7 +54,7 @@ readdir(async dirs => {
         const data = await readFile(`./assets/${dirs[i]}`)
         logger.log(`-------------------------------------------------  ${dirs[i]}  -----------------------------------------------`)
         for (let j = 0; j < data.length; j++) {
-            const textItem = data[j].replace('<div class="text">', '').replace('</div>', '').replace(/\s*/g,'')
+            const textItem = data[j].replace('<div class="text">', '').replace('</div>', '').trim()
             logger.log(textItem)
         }
     }
